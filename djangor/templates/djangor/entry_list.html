@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+  put a form here for authenticated users to create new posts
+{% endif %}
+<h1>Blog Entries</h1>
+{% if entries|length > 0 %}
+<ul id="entries">
+  {% for entry in entries %}
+  <li>
+    <div class="entry">
+      <h2>{{ entry.title }}</h2>
+      <div class="entry-body">
+      {{ entry.text }}
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No entries created yet.  Get to work!</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+body {
+    background-color: #eee;
+    color: #111;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+ul#entries {
+    list-style: none;
+    list-style-type: none;
+}
+div.entry {
+    border-top: 1px solid #e3e3e3;
+}
+ul#entries li:first-child div.entry {
+    border-top: none;
+}
+div.entry-body {
+    margin-left: 2em;
+}
