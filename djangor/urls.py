@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, url
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 
 
@@ -17,11 +18,11 @@ urlpatterns = patterns('',
         ),
         name="entry_list"),
     url(r'^add/$',
-        AddEntryView.as_view(
+        login_required(AddEntryView.as_view(
             model=Entry,
             form_class=EntryForm,
             template_name="djangor/entry_form.html",
             success_url="/",
-        ),
+        )),
         name="add_entry"),
 )
