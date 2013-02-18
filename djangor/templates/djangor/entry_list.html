@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% if request.user.is_authenticated %}
-  put a form here for authenticated users to create new posts
-{% endif %}
 <h1>Blog Entries</h1>
 {% if entries|length > 0 %}
 <ul id="entries">
