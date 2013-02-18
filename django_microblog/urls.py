@@ -14,5 +14,13 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^blog/', include('djangor.urls')),
+    url(r'^', include('djangor.urls')),
+    url(r'^login/$',
+        'django.contrib.auth.views.login',
+        {'template_name': 'djangor/login.html'},
+        name="login"),
+    url(r'^logout/$',
+        'django.contrib.auth.views.logout',
+        {'next_page': '/'},
+        name="logout"),
 )
